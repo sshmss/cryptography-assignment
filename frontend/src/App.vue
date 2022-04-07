@@ -74,7 +74,7 @@ export default {
 
   data: () => ({
     items: [
-      { title: 'Task 1', icon: 'mdi-credit-card-check-outline', to: '/taskone' },
+      { title: 'Task 1', icon: 'mdi-credit-card-check-outline', to: '/' },
       { title: 'Task 2', icon: 'mdi-code-tags-check', to: '/tasktwo' },
       { title: 'Task 3', icon: 'mdi-key-link', to: '/taskthree' },
       { title: 'Task 4', icon: 'mdi-looks', to: '/taskfour' },
