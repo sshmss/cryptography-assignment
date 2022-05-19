@@ -30,9 +30,26 @@ def ping_pong():
 def task_one():
     data = request.get_json()
     card_no = data['card_no']
-    if len(card_no) != 16 or not card_no.isdigit():
-        return jsonify({'data': 'Invalid characters or length does not match 16'}), 400
-    return jsonify({'data': "Card number is valid"})
+    if luhnCheck(card_no) and card_no.isdigit():
+        return jsonify({'data': 'Card number is valid'})
+    return jsonify({'data': "Invalid characters or does not pass Luhn's"}), 400
+
+def luhnCheck(cardNo):
+    digits = len(cardNo)
+    sum = 0
+    second = False
+    for i in range(digits - 1,-1,-1):
+        d = ord(cardNo[i]) - ord('0')
+        if second:
+            d = d*2
+        sum += d // 10
+        sum += d % 10
+        second = not second
+    if (sum % 10 == 0):
+        return True
+    else:
+        return False
+
 
 
 @app.route('/task4', methods=['POST'])

@@ -1,0 +1,15 @@
+a,aaa
+1,111
+b,bbb
+a1,1a1
+ab,bab
+1a,a1a
+1b,b1b
+ba,aba
+b1,1b1
+a1b,b1a
+ab1,1ba
+1ab,ba1
+1ba,ab1
+ba1,1ab
+b1a,a1b
